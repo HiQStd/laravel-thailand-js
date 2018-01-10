@@ -1,0 +1,4 @@
+[submodule "jquery.Thailand.js"]
+	path = jquery.Thailand.js
+	url = https://github.com/earthchie/jquery.Thailand.js.git
+    branch = master

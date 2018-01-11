@@ -2,11 +2,11 @@
 
 namespace Baraear\ThailandJS;
 
-use Illuminate\Support\Str;
+use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 use Illuminate\View\Compilers\BladeCompiler;
-use Illuminate\Foundation\Application as LaravelApplication;
 
 class ThailandJSServiceProvider extends ServiceProvider
 {
@@ -112,7 +112,7 @@ class ThailandJSServiceProvider extends ServiceProvider
     /**
      * Get the services provided by the provider.
      *
-     * @return array
+     * @return string[]
      */
     public function provides()
     {

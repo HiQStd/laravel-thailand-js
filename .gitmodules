@@ -1,0 +1,18 @@
+[submodule "dependencies/jquery"]
+	path = dependencies/jquery
+	url = https://github.com/jquery/jquery.git
+[submodule "dependencies/uikit"]
+	path = dependencies/uikit
+	url = https://github.com/uikit/uikit.git
+[submodule "dependencies/JQL.js"]
+	path = dependencies/JQL.js
+	url = https://github.com/earthchie/JQL.js.git
+[submodule "dependencies/zip.js"]
+	path = dependencies/zip.js
+	url = https://github.com/gildas-lormeau/zip.js.git
+[submodule "dependencies/typeahead.js"]
+	path = dependencies/typeahead.js
+	url = https://github.com/twitter/typeahead.js.git
+[submodule "dependencies/jquery.Thailand.js"]
+	path = dependencies/jquery.Thailand.js
+	url = https://github.com/earthchie/jquery.Thailand.js.git

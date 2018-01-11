@@ -4,9 +4,6 @@
 [submodule "dependencies/uikit"]
 	path = dependencies/uikit
 	url = https://github.com/uikit/uikit.git
-[submodule "dependencies/JQL.js"]
-	path = dependencies/JQL.js
-	url = https://github.com/earthchie/JQL.js.git
 [submodule "dependencies/zip.js"]
 	path = dependencies/zip.js
 	url = https://github.com/gildas-lormeau/zip.js.git

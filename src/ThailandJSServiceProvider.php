@@ -26,13 +26,16 @@ class ThailandJSServiceProvider extends ServiceProvider
             } else {
                 $this->publishes([
                     __DIR__ . '/../libraries/jquery.min.js' => $this->app->publicPath() . config('thailandjs.path.js') . "/jquery.min.js",
-                    __DIR__ . '/../libraries/jql.min.js' => $this->app->publicPath() . config('thailandjs.path.js') . "/jql.min.js",
+                    __DIR__ . '/../libraries/JQL.min.js' => $this->app->publicPath() . config('thailandjs.path.js') . "/JQL.min.js",
                     __DIR__ . '/../libraries/zip.js' => $this->app->publicPath() . config('thailandjs.path.js') . "/zip.js",
+                    __DIR__ . '/../libraries/z-worker.js' => $this->app->publicPath() . config('thailandjs.path.js') . "/z-worker.js",
+                    __DIR__ . '/../libraries/inflate.js' => $this->app->publicPath() . config('thailandjs.path.js') . "/inflate.js",
                     __DIR__ . '/../libraries/uikit.js' => $this->app->publicPath() . config('thailandjs.path.js') . "/uikit.js",
                     __DIR__ . '/../libraries/uikit.css' => $this->app->publicPath() . config('thailandjs.path.css') .  "/uikit.css",
                     __DIR__ . '/../libraries/typeahead.bundle.js' => $this->app->publicPath() . config('thailandjs.path.js') .  "/typeahead.bundle.js",
                     __DIR__ . '/../libraries/jquery.Thailand.min.js' => $this->app->publicPath() . config('thailandjs.path.js') .  "/jquery.Thailand.min.js",
                     __DIR__ . '/../libraries/jquery.Thailand.min.css' => $this->app->publicPath() . config('thailandjs.path.css') .  "/jquery.Thailand.min.css",
+                    __DIR__ . '/../libraries/database' => $this->app->publicPath() . config('thailandjs.path.js') .  "/database",
                 ], 'resources');
             }
         }

@@ -3,8 +3,8 @@
 namespace Baraear\ThailandJS;
 
 use BadMethodCallException;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Support\HtmlString;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Support\Traits\Macroable;
 
 class ThailandJSBuilder
@@ -41,8 +41,8 @@ class ThailandJSBuilder
         if (config('thailandjs.use-mix')) {
             $return = $this->toHtmlString('');
         } else {
-            $return = $this->toHtmlString('<link rel="stylesheet" href="' . asset(config('thailandjs.path.css') . '/uikit.css') . '">' . PHP_EOL);
-            $return .= $this->toHtmlString('<link rel="stylesheet" href="' . asset(config('thailandjs.path.css') . '/jquery.Thailand.min.css') . '">' . PHP_EOL);
+            $return = $this->toHtmlString('<link rel="stylesheet" href="'.asset(config('thailandjs.path.css').'/uikit.css').'">'.PHP_EOL);
+            $return .= $this->toHtmlString('<link rel="stylesheet" href="'.asset(config('thailandjs.path.css').'/jquery.Thailand.min.css').'">'.PHP_EOL);
         }
 
         return $return;
@@ -58,12 +58,12 @@ class ThailandJSBuilder
         if (config('thailandjs.use-mix')) {
             $return = $this->toHtmlString('');
         } else {
-            $return = $this->toHtmlString('<script type="text/javascript" src="' . asset(config('thailandjs.path.js') . '/jquery.min.js') . '"></script>' . PHP_EOL);
-            $return .= $this->toHtmlString('<script type="text/javascript" src="' . asset(config('thailandjs.path.js') . '/uikit.js') . '"></script>' . PHP_EOL);
-            $return .= $this->toHtmlString('<script type="text/javascript" src="' . asset(config('thailandjs.path.js') . '/zip.js') . '"></script>' . PHP_EOL);
-            $return .= $this->toHtmlString('<script type="text/javascript" src="' . asset(config('thailandjs.path.js') . '/JQL.min.js') . '"></script>' . PHP_EOL);
-            $return .= $this->toHtmlString('<script type="text/javascript" src="' . asset(config('thailandjs.path.js') . '/typeahead.bundle.js') . '"></script>' . PHP_EOL);
-            $return .= $this->toHtmlString('<script type="text/javascript" src="' . asset(config('thailandjs.path.js') . '/jquery.Thailand.min.js') . '"></script>' . PHP_EOL);
+            $return = $this->toHtmlString('<script type="text/javascript" src="'.asset(config('thailandjs.path.js').'/jquery.min.js').'"></script>'.PHP_EOL);
+            $return .= $this->toHtmlString('<script type="text/javascript" src="'.asset(config('thailandjs.path.js').'/uikit.js').'"></script>'.PHP_EOL);
+            $return .= $this->toHtmlString('<script type="text/javascript" src="'.asset(config('thailandjs.path.js').'/zip.js').'"></script>'.PHP_EOL);
+            $return .= $this->toHtmlString('<script type="text/javascript" src="'.asset(config('thailandjs.path.js').'/JQL.min.js').'"></script>'.PHP_EOL);
+            $return .= $this->toHtmlString('<script type="text/javascript" src="'.asset(config('thailandjs.path.js').'/typeahead.bundle.js').'"></script>'.PHP_EOL);
+            $return .= $this->toHtmlString('<script type="text/javascript" src="'.asset(config('thailandjs.path.js').'/jquery.Thailand.min.js').'"></script>'.PHP_EOL);
         }
 
         return $return;
@@ -79,40 +79,40 @@ class ThailandJSBuilder
      */
     public function render($attributes = '', $onLoad = '', $log = false)
     {
-        $javascript = '<script type="text/javascript">' . PHP_EOL;
-        $javascript .= '    $.Thailand({' . PHP_EOL;
-        $javascript .= '        database: \'' . asset('js/laravel-thailand-js/database/db.json') . '\',' . PHP_EOL;
+        $javascript = '<script type="text/javascript">'.PHP_EOL;
+        $javascript .= '    $.Thailand({'.PHP_EOL;
+        $javascript .= '        database: \''.asset('js/laravel-thailand-js/database/db.json').'\','.PHP_EOL;
         $javascript .= PHP_EOL;
         if ($attributes != '') {
-            $javascript .= '        $district: $(\'' . $attributes['district'] . '\'),' . PHP_EOL;
-            $javascript .= '        $amphoe: $(\'' . $attributes['amphoe'] . '\'),' . PHP_EOL;
-            $javascript .= '        $province: $(\'' . $attributes['province'] . '\'),' . PHP_EOL;
-            $javascript .= '        $zipcode: $(\'' . $attributes['zipcode'] . '\'),' . PHP_EOL;
+            $javascript .= '        $district: $(\''.$attributes['district'].'\'),'.PHP_EOL;
+            $javascript .= '        $amphoe: $(\''.$attributes['amphoe'].'\'),'.PHP_EOL;
+            $javascript .= '        $province: $(\''.$attributes['province'].'\'),'.PHP_EOL;
+            $javascript .= '        $zipcode: $(\''.$attributes['zipcode'].'\'),'.PHP_EOL;
         } else {
-            $javascript .= '        $district: $(\'#demo1 [name="district"]\'),' . PHP_EOL;
-            $javascript .= '        $amphoe: $(\'#demo1 [name="amphoe"]\'),' . PHP_EOL;
-            $javascript .= '        $province: $(\'#demo1 [name="province"]\'),' . PHP_EOL;
-            $javascript .= '        $zipcode: $(\'#demo1 [name="zipcode"]\'),' . PHP_EOL;
+            $javascript .= '        $district: $(\'#demo1 [name="district"]\'),'.PHP_EOL;
+            $javascript .= '        $amphoe: $(\'#demo1 [name="amphoe"]\'),'.PHP_EOL;
+            $javascript .= '        $province: $(\'#demo1 [name="province"]\'),'.PHP_EOL;
+            $javascript .= '        $zipcode: $(\'#demo1 [name="zipcode"]\'),'.PHP_EOL;
         }
         $javascript .= PHP_EOL;
         if ($log) {
-            $javascript .= '        onDataFill: function(data){' . PHP_EOL;
-            $javascript .= '            console.info(\'Data Filled\', data);' . PHP_EOL;
-            $javascript .= '        },' . PHP_EOL;
+            $javascript .= '        onDataFill: function(data){'.PHP_EOL;
+            $javascript .= '            console.info(\'Data Filled\', data);'.PHP_EOL;
+            $javascript .= '        },'.PHP_EOL;
             $javascript .= PHP_EOL;
         }
-        $javascript .= '        onLoad: function(){' . PHP_EOL;
+        $javascript .= '        onLoad: function(){'.PHP_EOL;
         if ($log) {
-            $javascript .= '            console.info(\'Autocomplete is ready!\');' . PHP_EOL;
+            $javascript .= '            console.info(\'Autocomplete is ready!\');'.PHP_EOL;
         }
         if ($onLoad != '') {
-            $javascript .= '            $(\'' . $onLoad . '\').toggle();' . PHP_EOL;
+            $javascript .= '            $(\''.$onLoad.'\').toggle();'.PHP_EOL;
         } else {
-            $javascript .= '            $(\'#loader, .demo\').toggle();' . PHP_EOL;
+            $javascript .= '            $(\'#loader, .demo\').toggle();'.PHP_EOL;
         }
-        $javascript .= '        }' . PHP_EOL;
-        $javascript .= '    });' . PHP_EOL;
-        $javascript .= '</script>' . PHP_EOL;
+        $javascript .= '        }'.PHP_EOL;
+        $javascript .= '    });'.PHP_EOL;
+        $javascript .= '</script>'.PHP_EOL;
 
         return $this->toHtmlString($javascript);
     }
@@ -128,46 +128,46 @@ class ThailandJSBuilder
      */
     public function search($searchable = '', $prepend = '', $onLoad = '', $log = false)
     {
-        $javascript = '<script type="text/javascript">' . PHP_EOL;
-        $javascript .= '    $.Thailand({' . PHP_EOL;
-        $javascript .= '        database: \'' . asset('js/laravel-thailand-js/database/db.json') . '\',' . PHP_EOL;
+        $javascript = '<script type="text/javascript">'.PHP_EOL;
+        $javascript .= '    $.Thailand({'.PHP_EOL;
+        $javascript .= '        database: \''.asset('js/laravel-thailand-js/database/db.json').'\','.PHP_EOL;
         $javascript .= PHP_EOL;
         if ($searchable != '') {
-            $javascript .= '        $search: $(\'' . $searchable . '\'),' . PHP_EOL;
+            $javascript .= '        $search: $(\''.$searchable.'\'),'.PHP_EOL;
         } else {
-            $javascript .= '        $search: $(\'#demo2 [name="search"]\'),' . PHP_EOL;
+            $javascript .= '        $search: $(\'#demo2 [name="search"]\'),'.PHP_EOL;
         }
         $javascript .= PHP_EOL;
-        $javascript .= '        onDataFill: function(data){' . PHP_EOL;
+        $javascript .= '        onDataFill: function(data){'.PHP_EOL;
         if ($log) {
-            $javascript .= '            console.info(\'Data Filled\', data);' . PHP_EOL;
+            $javascript .= '            console.info(\'Data Filled\', data);'.PHP_EOL;
         }
-        $javascript .= '            var result = \'ตำบล\' + data.district + \' อำเภอ\' + data.amphoe + \' จังหวัด\' + data.province + \' \' + data.zipcode;' . PHP_EOL;
+        $javascript .= '            var result = \'ตำบล\' + data.district + \' อำเภอ\' + data.amphoe + \' จังหวัด\' + data.province + \' \' + data.zipcode;'.PHP_EOL;
         if ($prepend != '') {
-            $javascript .= '            $(\'' . $prepend . '\').prepend(result);' . PHP_EOL;
+            $javascript .= '            $(\''.$prepend.'\').prepend(result);'.PHP_EOL;
         } else {
-            $javascript .= '            $(\'#demo2-output\').prepend(result);' . PHP_EOL;
+            $javascript .= '            $(\'#demo2-output\').prepend(result);'.PHP_EOL;
         }
-        $javascript .= '        },' . PHP_EOL;
+        $javascript .= '        },'.PHP_EOL;
         $javascript .= PHP_EOL;
-        $javascript .= '        onLoad: function(){' . PHP_EOL;
+        $javascript .= '        onLoad: function(){'.PHP_EOL;
         if ($log) {
-            $javascript .= '            console.info(\'Autocomplete is ready!\');' . PHP_EOL;
+            $javascript .= '            console.info(\'Autocomplete is ready!\');'.PHP_EOL;
         }
         if ($onLoad != '') {
-            $javascript .= '            $(\'' . $onLoad . '\').toggle();' . PHP_EOL;
+            $javascript .= '            $(\''.$onLoad.'\').toggle();'.PHP_EOL;
         } else {
-            $javascript .= '            $(\'#loader, .demo\').toggle();' . PHP_EOL;
+            $javascript .= '            $(\'#loader, .demo\').toggle();'.PHP_EOL;
         }
-        $javascript .= '        }' . PHP_EOL;
-        $javascript .= '    });' . PHP_EOL;
-        $javascript .= '</script>' . PHP_EOL;
+        $javascript .= '        }'.PHP_EOL;
+        $javascript .= '    });'.PHP_EOL;
+        $javascript .= '</script>'.PHP_EOL;
 
         return $this->toHtmlString($javascript);
     }
 
     /**
-     * Transform the string to an Html serializable object
+     * Transform the string to an Html serializable object.
      *
      * @param $html
      *

@@ -2,11 +2,11 @@
 
 namespace Baraear\ThailandJS;
 
-use Illuminate\Foundation\Application as LaravelApplication;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Str;
 use Illuminate\View\Compilers\BladeCompiler;
+use Illuminate\Foundation\Application as LaravelApplication;
 
 class ThailandJSServiceProvider extends ServiceProvider
 {

@@ -1,0 +1,13 @@
+{
+    "name": "baraear/laravel-thailand-js",
+    "description": "From the most popular tool for help user fill the thailand address deploy it for Laravel Framework.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "baraear",
+            "email": "baraear@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

@@ -31,7 +31,7 @@ trait Componentable
     /**
      * Check if a component is registered.
      *
-     * @param $name
+     * @param string $name
      *
      * @return bool
      */
@@ -43,7 +43,7 @@ trait Componentable
     /**
      * Render a custom component.
      *
-     * @param        $name
+     * @param        string $name
      * @param  array $arguments
      *
      * @return \Illuminate\Support\HtmlString

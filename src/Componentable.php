@@ -7,7 +7,6 @@ use Illuminate\Support\HtmlString;
 
 trait Componentable
 {
-
     /**
      * The registered components.
      *
